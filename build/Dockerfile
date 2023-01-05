@@ -5,10 +5,10 @@ LABEL org.opencontainers.image.source = "https://github.com/benc-uk/python-demoa
 
 ARG srcDir=src
 WORKDIR /app
-COPY $srcDir/requirements.txt ../requirements.txt
+COPY $srcDir/requirements.txt ..
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY $srcDir/run.py ../
+COPY $srcDir/run.py ..
 COPY $srcDir/app ../app
 
 EXPOSE 5000
