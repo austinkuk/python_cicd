@@ -1,3 +1,10 @@
+variables:
+    PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+    paths:
+        - .cache/pip
+
 run_test:
     image: python:3.9-slim-buster
     before_script:
