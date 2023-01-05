@@ -10,6 +10,7 @@ cache:
         - .cache/pip
 
 run_test:
+    stage: test
     image: python:3.9-slim-buster
     before_script:
         - apt-get update && apt-get -y install make git
@@ -18,9 +19,7 @@ run_test:
 
 build_image:
     stage: build
-    image: python:3.9-slim-buster
-    before_script:
-        - pip3 install awscli --upgrade --user
+    image: registry.gitlab.com/gitlab-org/cloud-deploy/aws-base:latest
     script:
         - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_REPO
         - docker build -t DOCKERIMAGE:DOCKERTAG .
