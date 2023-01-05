@@ -3,7 +3,7 @@ variables:
     REGION: ap-northeast-1
     ECR_REPO: 873799242473.dkr.ecr.ap-northeast-1.amazonaws.com
     DOCKER_IMAGE: python
-    DOCKER_TAG: ver1
+    DOCKER_TAG: latest
 
 cache:
     paths:
