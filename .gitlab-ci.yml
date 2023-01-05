@@ -27,4 +27,4 @@ build_image:
     script:
         - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_REPO
         - docker build -t $DOCKER_IMAGE:$DOCKER_TAG .
-        - docker push $ECR_REPO/$DOCKER_IMAGE:$DOCKER_IMAGE
+        - docker push $ECR_REPO/$DOCKER_IMAGE:$DOCKER_TAG
