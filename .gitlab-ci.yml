@@ -8,6 +8,6 @@ cache:
 run_test:
     image: python:3.9-slim-buster
     before_script:
-        - apt-get update && apt-get -y install make
+        - apt-get update && apt-get -y install make git
     script:
         - make test
