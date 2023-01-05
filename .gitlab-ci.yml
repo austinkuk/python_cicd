@@ -10,4 +10,4 @@ run_test:
     before_script:
         - apt-get update && apt-get -y install make
     script:
-        - mkae test
+        - make test
