@@ -1,6 +1,5 @@
 import json
 
-
 # Test the process API returns JSON results we expect
 def test_api_process(client):
     resp = client.get("/api/process")
