@@ -17,6 +17,8 @@ run_test:
         - make test
 
 build_image:
+    stage: build
+    image: python:3.9-slim-buster
     before_script:
         - pip3 install awscli --upgrade --user
     script:
