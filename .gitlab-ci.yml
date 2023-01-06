@@ -36,9 +36,10 @@ deploy:
     before_script:
         - apk add --no-cache openssh
         - chmod 400 $SSH_KEY
-        - sudo su
+        # - sudo su
     script:
         - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@3.39.230.35 "
+            sudo su
             aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_REPO &&   
             docker ps -aq | $DOCKER_IMAEG docker stop | $DOCKER_IMAGE docker rm && 
             docker run -d -p 5000:5000 $DOCKER_IMAGE:$IMAGE_TAG"
