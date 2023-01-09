@@ -38,7 +38,7 @@ deploy:
         - chmod 400 $SSH_KEY
         # - sudo su
     script:
-        - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@3.39.230.35 "
+        - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@3.39.230.35
         - aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_REPO  
         - docker ps -aq | xargs docker stop  | xargs docker rm
         - docker run -d -p 5000:5000 $DOCKER_IMAGE:$IMAGE_TAG"
