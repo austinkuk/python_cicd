@@ -40,5 +40,5 @@ deploy:
     script:
         - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@3.39.230.35 "
             aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_REPO &&
-            docker pull 873799242473.dkr.ecr.ap-northeast-1.amazonaws.com/austin:latest &&
+            docker ps -aq | xargs docekr stop | xargs docekr rm &&
             docker run -d -p 5000:5000 $DOCKER_IMAGE:$IMAGE_TAG"
