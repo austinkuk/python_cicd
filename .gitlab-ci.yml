@@ -39,7 +39,7 @@ deploy:
         # - sudo su
     script:
         - ssh -o StrictHostKeyChecking=no -i $SSH_KEY ubuntu@3.39.230.35 "
-            aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_REPO &&
+            aws ecr get-login-password --region ap-northeast-1 | docker login --username AWS --password-stdin $ECR_REPO
             if [ ! "$(docker ps -a -q -f name=vigorous_raman)" ]; then
                 if [ "$(docker ps -aq -f status=exited -f name=vigorous_raman)" ]; then
                     docker rm vigorous_raman
