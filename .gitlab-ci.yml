@@ -1,7 +1,7 @@
 variables:
     PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
-    REGION: ap-northeast-1
-    ECR_REPO: 873799242473.dkr.ecr.ap-northeast-1.amazonaws.com
+    REGION: 
+    ECR_REPO: 
     DOCKER_IMAGE: austin
     DOCKER_TAG: latest
 
